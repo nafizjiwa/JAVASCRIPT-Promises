@@ -24,7 +24,7 @@ A new Promise is created with the new keyword and the promise provides resolve a
 <br>
 The developer must call resolve or reject within the body of the callback based on the result of their given task.<br>
 Since a promise is always returned, you can always use the then and catch methods on its return value!<br>
-##### then
+### then
 All promise instances get a .then method which allows you to react to the promise.  The 1st then method callback receives the result given to it by the resolve() call<br>
 
             new Promise(function(resolve, reject) {
@@ -56,7 +56,7 @@ Chaining .then method callbacks:<br>
 Each then receives the result of the previous then's return value.<br>
 If a promise has already resolved but then is called again, the callback immediately fires.<br>
 If the promise is rejected and you call then after rejection, the callback is never called. <br>
-##### catch
+### catch
 The catch callback is executed when the promise is rejected:<br>
 
             new Promise(function(resolve, reject) {
