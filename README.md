@@ -1,6 +1,6 @@
 # JAVASCRIPT-Promises
 
-##### EXAMPLE
+##### EXAMPLE #1
 
   var promiseCount = 0;
 
@@ -27,3 +27,28 @@
 `testPromise();` <br>
 `testPromise();` <br>
 `testPromise(); <br>
+
+#### EXAMPLE #2
+
+      let empty_tank = function(){
+          return new Promise(function(resolve,reject){
+              resolve('The car doesn't have enough fuel.')
+          })
+      }
+      let engine = function(){
+          return new Promise(function(resolve,reject){
+              resolve('The engine is over heating.')
+          })
+      }
+      let travel = function(){
+          return new Promise(function(resolve,reject){
+              resolve('The car is not safe for travelling.')
+          })
+      }
+      empty_tank.then(function(){
+          return enging()
+      }).then(function(){
+          return travel()
+      }).then(function(){
+          console.log('Done!')
+      })
