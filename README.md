@@ -39,7 +39,8 @@ All promise instances get a .then method which allows you to react to the promis
             // 10
 The then callback is triggered when the promise is resolved.
 
-Chaining .then method callbacks:
+Chaining .then method callbacks:<br>
+
             new Promise(function(resolve, reject) { 
             	// A mock async action using setTimeout
             	setTimeout(function() { resolve(10); }, 3000);
