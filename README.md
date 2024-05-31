@@ -24,6 +24,6 @@
       console.log(thisPromiseCount + ' : Promise made = Sync code terminated');
     }
 
-`testPromise();`
-`testPromise();`
-`testPromise();
+`testPromise();` <br>
+`testPromise();` <br>
+`testPromise(); <br>
