@@ -7,10 +7,10 @@ A new Promise is created with the new keyword and the promise provides resolve a
       	// Do an async task async task and then...
       
       	if(/* good condition */) {
-      		resolve('Success!');
+      		resolve('Success!'); //resolved called based on true condition
       	}
       	else {
-      		reject('Failure!');
+      		reject('Failure!');  //reject called based on false condition
       	}
       });
       
@@ -22,6 +22,55 @@ A new Promise is created with the new keyword and the promise provides resolve a
          /* executes regardless or success for failure */ 
       });
 <br>
+The developer must call resolve or reject within the body of the callback based on the result of their given task.<br>
+Since a promise is always returned, you can always use the then and catch methods on its return value!<br>
+##### then
+All promise instances get a .then method which allows you to react to the promise.  The 1st then method callback receives the result given to it by the resolve() call<br>
+
+            new Promise(function(resolve, reject) {
+            	// A mock async action using setTimeout
+            	setTimeout(function() { resolve(10); }, 3000);
+            })
+            .then(function(result) {
+            	console.log(result);
+            });
+            
+            // From the console:
+            // 10
+The then callback is triggered when the promise is resolved.
+
+Chaining .then method callbacks:
+            new Promise(function(resolve, reject) { 
+            	// A mock async action using setTimeout
+            	setTimeout(function() { resolve(10); }, 3000);
+            })
+            .then(function(num) { console.log('first then: ', num); return num * 2; })
+            .then(function(num) { console.log('second then: ', num); return num * 2; })
+            .then(function(num) { console.log('last then: ', num);});
+            
+            // From the console:
+            // first then:  10
+            // second then:  20
+            // last then:  40  
+Each then receives the result of the previous then's return value.<br>
+If a promise has already resolved but then is called again, the callback immediately fires.<br>
+If the promise is rejected and you call then after rejection, the callback is never called. <br>
+##### catch
+The catch callback is executed when the promise is rejected:<br>
+
+            new Promise(function(resolve, reject) {
+            	// A mock async action using setTimeout
+            	setTimeout(function() { reject('Done!'); }, 3000);
+            })
+            .then(function(e) { console.log('done', e); })
+            .catch(function(e) { console.log('catch: ', e); });
+            
+            // From the console:
+            // 'catch: Done!'
+What you provide to the reject method is up to you. A frequent pattern is sending an Error to the catch:<br>
+
+            reject(Error('Data could not be found'));
+
 ##### EXAMPLE #1
 
   var promiseCount = 0;
