@@ -18,12 +18,12 @@ function testPromise() { <br>
   
 >p1.then(function(val){ <br>
 >>>>>console.log(val + ': Promise fullfilled = Async code terminated"'); <br>
->>}).catch(function(reason){ <br>
+>}).catch(function(reason){ <br>
 >>>>>console.log('Handle rejected promise ('+ reason+') here.'); <br>
->>}) <br>
+>}) <br>
 >>>>>console.log(thisPromiseCount + ' : Promise made = Sync code terminated'); <br>
 >} <br>
->>}).catch(function(reason){ <br>
+>}).catch(function(reason){ <br>
 >>>>>console.log('Handle rejected promise ('+ reason+') here.'); <br>
 >}) <br>
 console.log(thisPromiseCount + ' : Promise made = Sync code terminated'); <br>
