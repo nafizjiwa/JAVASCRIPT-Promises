@@ -24,4 +24,10 @@ function testPromise() { <br>
 >>>>>console.log(thisPromiseCount + ' : Promise made = Sync code terminated'); <br>
 >} <br>
 
+>>}).catch(function(reason){ <br>
+>>>>>console.log('Handle rejected promise ('+ reason+') here.'); <br>
+}) <br>
+console.log(thisPromiseCount + ' : Promise made = Sync code terminated'); <br>
+
+
 testPromise(); <br>
