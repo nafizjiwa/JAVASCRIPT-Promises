@@ -45,7 +45,7 @@
               resolve('The car is not safe for travelling.')
           })
       }
-      empty_tank.then(function(){
+      empty_tank().then(function(){
           return enging()
       }).then(function(){
           return travel()
