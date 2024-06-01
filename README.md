@@ -24,6 +24,7 @@ A new Promise is created with the new keyword and the promise provides resolve a
 <br>
 The developer must call resolve or reject within the body of the callback based on the result of their given task.<br>
 Since a promise is always returned, you can always use the then and catch methods on its return value!<br>
+
 ### then
 All promise instances get a .then method which allows you to react to the promise.  The 1st then method callback receives the result given to it by the resolve() call<br>
 
