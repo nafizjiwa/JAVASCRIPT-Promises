@@ -108,10 +108,9 @@ Takes an array of promises and fires one callback once they are all resolved:
       })
       console.log(thisPromiseCount + ' : Promise made = Sync code terminated');
     }
-
-`testPromise();` <br>
-`testPromise();` <br>
-`testPromise();` <br>
+      testPromise();
+      testPromise();
+      testPromise();
 
 #### EXAMPLE #2
 
