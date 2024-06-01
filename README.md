@@ -53,9 +53,10 @@ Chaining .then method callbacks:<br>
             // first then:  10
             // second then:  20
             // last then:  40  
-Each then receives the result of the previous then's return value.<br>
+Each .then receives the result of the previous then's return value.<br>
 If a promise has already resolved but then is called again, the callback immediately fires.<br>
 If the promise is rejected and you call then after rejection, the callback is never called. <br>
+
 ### catch
 The catch callback is executed when the promise is rejected:<br>
 
@@ -71,6 +72,17 @@ The catch callback is executed when the promise is rejected:<br>
 What you provide to the reject method is up to you. A frequent pattern is sending an Error to the catch:<br>
 
             reject(Error('Data could not be found'));
+
+### Promise.all
+Takes an array of promises and fires one callback once they are all resolved:
+
+            Promise.all([promise1, promise2])
+            .then(function(results) {
+            	// Both promises resolved
+            })
+            .catch(function(error) {
+            	// One or more promises was rejected
+            });
 
 ##### EXAMPLE #1
 
