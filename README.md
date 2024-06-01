@@ -110,7 +110,7 @@ Takes an array of promises and fires one callback once they are all resolved:
 
 `testPromise();` <br>
 `testPromise();` <br>
-`testPromise(); <br>
+`testPromise();` <br>
 
 #### EXAMPLE #2
 
