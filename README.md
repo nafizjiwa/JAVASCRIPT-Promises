@@ -87,8 +87,7 @@ Takes an array of promises and fires one callback once they are all resolved:
 
 ##### EXAMPLE #1
 
-  var promiseCount = 0;
-
+    var promiseCount = 0;
     function testPromise() { 
       var thisPromiseCount = ++promiseCount;
       console.log(thisPromiseCount + ': Started =Sync code started');
